@@ -1,0 +1,65 @@
+[user]
+    name = joachim verbeke
+    email = joachim.verbeke@outlook.com
+    editor = nano
+
+[github]
+    user = intergalactic-overlords
+    token =
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+    # Treat spaces before tabs and all kinds of trailing whitespace as an error
+    # [default] trailing-space: looks for spaces at the end of a line
+    # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+    whitespace = trailing-space,space-before-tab,indent-with-non-tab,cr-at-eol
+
+    editor = nano
+    fileMode = false
+    safecrlf = true
+
+    # Make `git rebase` safer on OS X
+    # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+    trustctime = false
+
+[apply]
+    # Detect whitespace errors when applying a patch
+    whitespace = fix
+
+[branch]
+    autosetuprebase = always
+
+[diff]
+    # Detect copies as well as renames
+    renames = copies
+
+[help]
+    autocorrect = 1
+
+[push]
+    default = current
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+
+[color "branch"]
+    current = cyan
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan

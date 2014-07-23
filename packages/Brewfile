@@ -1,0 +1,13 @@
+curl
+drush
+git
+git-completion
+grep
+make
+postgresql
+sqlite
+tig
+tree
+wget
+zsh
+zsh-completions
