@@ -1,0 +1,25 @@
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1	localhost
+fe80::1%lo0	localhost
+
+
+# local
+192.168.50.2	local.dev
+
+# unwanted
+0.0.0.1	ad05f.ru
+0.0.0.1	adforce.ru
+0.0.0.1	adform.net track.adform.net
+0.0.0.1	adnxs.com ib.adnxs.com secure.adnxs.com
+0.0.0.1	directadvert.ru www.directadvert.ru
+0.0.0.1 doubleclick.net ad.doubleclick.net
+0.0.0.1	dt00.net mg.dt00.net
+0.0.0.1	gamenet.ru go.gamenet.ru
+0.0.0.1	mail.ru ad.mail.ru rs.mail.ru
+0.0.0.1	openstat.net
+0.0.0.1	spylog.com counter.spylog.com
+0.0.0.1	unibet.be fr.unibet.be nl.unibet.be
+0.0.0.1	unibet.com a1s.unibet.com banners.unibet.com
+0.0.0.1	roulettebotplus.com www.roulettebotplus.com
+0.0.0.1	mackeeperapp.zeobit.com mackeeperapp1.zeobit.com

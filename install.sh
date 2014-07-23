@@ -76,6 +76,10 @@ source ${DOTFILES_DIR}/osxdefaults.sh
 #open ${DOTFILES_DIR}/deps/solarized/iterm2-colors-solarized/Solarized\ Dark.itermcolors
 #open ${DOTFILES_DIR}/deps/solarized/iterm2-colors-solarized/Solarized\ Light.itermcolors
 
+#hosts file
+log_message "hosts file settings"
+sudo cat ${DOTFILES_DIR}/settings/hosts >> /etc/hosts
+
 # zsh
 log_message "Setting zsh (FTW) as shell.."
 ZSH=$(which zsh)
