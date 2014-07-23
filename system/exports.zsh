@@ -1,4 +1,13 @@
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$DOTFILES_DIR/bin"
+export EDITOR='brackets'
+
+# PATHS
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:~/bin
+export PATH=/usr/local/Cellar/ruby/2.0.0-p247/bin:$PATH
+
+# NVM path
+export NVM_DIR="~/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Tell grep to highlight matches
 export GREP_OPTIONS=’—color=auto’

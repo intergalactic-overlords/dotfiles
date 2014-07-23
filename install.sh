@@ -8,7 +8,8 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Bunch of symlinks
 log_message "symlinking.."
-ln -sfhv "$DOTFILES_DIR/runcom/.bash_profile"" ~
+# ln -sfhv "$DOTFILES_DIR/runcom/.bash_profile" ~
+ln -sfhv "$DOTFILES_DIR/runcom/.zshrc" ~
 ln -sfhv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfhv "$DOTFILES_DIR/git/.gitignore_global" ~
 
@@ -26,6 +27,8 @@ ln -sfhv "$DOTFILES_DIR/git/.gitignore_global" ~
 log_message "Brewing ALL THE THINGS.."
 if [[ ! $(which brew) ]]; then
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    # Link Homebrew casks in `/Applications` rather than `~/Applications`
+    echo 'export HOMEBREW_CASK_OPTS="--appdir=/Applications"' >> ~/.bash_profile
 else
     brew update
     brew upgrade
