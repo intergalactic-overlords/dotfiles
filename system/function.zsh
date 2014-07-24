@@ -1,10 +1,10 @@
 # Create a new directory and enter it
-function mk() {
+function mk () {
   mkdir -p "$@" && cd "$@"
 }
 
 # Open man page as PDF
-function manpdf() {
+function manpdf () {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
@@ -34,6 +34,13 @@ extract () {
 }
 
 # Add spaces to dock
-dockspacer() {
+dockspacer () {
   defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 }
+
+# join array
+# example use:
+# join , a "b c" d      -> a,b c,d
+# join / var local tmp  -> var/local/tmp
+# join , "${FOO[@]}"    -> a,b,c
+join () {local IFS="$1"; shift; echo "$*"; }

@@ -13,10 +13,6 @@ git_branch() {
   echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
-untracked () {
-  grep -s "^??" | $git status --porcelain 2>/dev/null | wc -l
-}
-
 git_dirty() {
   if $(! $git status -s &> /dev/null)
   then
@@ -24,9 +20,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%} $(untracked)"
+      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%} $(untracked)"
+      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
     fi
   fi
 }
@@ -41,14 +37,32 @@ unpushed () {
   $git cherry -v @{upstream} 2>/dev/null
 }
 
-
+untracked () {
+  $git status --porcelain 2>/dev/null | grep "^??" | wc -l | sed 's/^ *//'
+}
 
 need () {
-  if [[ $(unpushed) == "" ]]
+  ut=$(untracked)
+  up=$(unpushed)
+  if [[ $up == "" && $ut -eq 0 ]]
   then
     echo " "
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%}"
+    items=()
+    if [[ $up != "" ]]
+    then
+      items+=(' unpushed')
+    fi
+    if [[ $ut -ne 0 ]]
+    then
+      items+=(" $ut untracked")
+    fi
+
+    # %{$fg_bold[magenta]%}unpushed%{$reset_color%}"
+
+    output=$(join ", " "%{$fg_bold[magenta]%}${items[@]}%{$reset_color%}")
+    output=" with$output"
+    echo "$output"
   fi
 }
 
@@ -74,10 +88,11 @@ rb_prompt() {
 }
 
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  echo "%{$fg_bold[cyan]%}%~%{$reset_color%}"
 }
 
 export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need)\n› '
+
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }

@@ -10,9 +10,6 @@ export PATH=~/.nvm/v0.10.29/bin:$PATH
 #export NVM_DIR="~/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# Tell grep to highlight matches
-export GREP_OPTIONS=’—color=auto’
-
 # Prefer US English and use UTF-8
 export LANG="en_US.UTF-8";
 export LC_ALL="en_US.UTF-8";
