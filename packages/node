@@ -1,1 +1,1 @@
-grunt-cli gulp express-generator underscore-cli bower yo jade nodemon phantomjs http-server
+grunt-cli gulp express-generator underscore-cli bower bower-update yo jade jshint nodemon phantomjs http-server

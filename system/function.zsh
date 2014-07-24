@@ -5,7 +5,7 @@ function mk() {
 
 # Open man page as PDF
 function manpdf() {
- man -t "${1}" | open -f -a /Applications/Preview.app/
+  man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
 # Extra many types of compressed packages
@@ -27,8 +27,13 @@ extract () {
       *.pax.Z) uncompress $1 —stdout | pax -r ;;
       *.Z) uncompress $1 ;;
       *) echo "'$1' cannot be extracted/mounted via extract()";;
-   esac
- else
-   echo "'$1' is not a valid file to extract"
- fi
+    esac
+  else
+    echo "'$1' is not a valid file to extract"
+  fi
+}
+
+# Add spaces to dock
+dockspacer() {
+  defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 }
