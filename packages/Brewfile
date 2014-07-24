@@ -1,13 +1,13 @@
-curl
-drush
-git
-git-completion
-grep
-make
-postgresql
-sqlite
-tig
-tree
-wget
-zsh
-zsh-completions
+install curl
+install drush
+install git
+install git-completion
+install grep
+install make
+install postgresql
+install sqlite
+install tig
+install tree
+install wget
+install zsh
+install zsh-completions

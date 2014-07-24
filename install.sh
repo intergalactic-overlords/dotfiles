@@ -13,16 +13,6 @@ ln -sfhv "$DOTFILES_DIR/runcom/.zshrc" ~
 ln -sfhv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfhv "$DOTFILES_DIR/git/.gitignore_global" ~
 
-#if [[ ! -f ~/.envvars.rc ]]; then
-#    echo "export DOTFILESDIR=${DOTFILES_DIR}" > ~/.envvars.rc
-#else
-#    if [[ $(cat ~/.envvars.rc | grep DOTFILESDIR) ]]; then
-#        echo "export DOTFILESDIR=${DOTFILES_DIR}" >> ~/.envvars.rc
-#    else
-#        sed -i ~/.envvars.rc -e "s/export\sDOTFILESDIR=.*$/export DOTFILESDIR=${DOTFILES_DIR}/"
-#    fi
-#fi
-
 # install homebrew
 log_message "Brewing ALL THE THINGS.."
 if [[ ! $(which brew) ]]; then

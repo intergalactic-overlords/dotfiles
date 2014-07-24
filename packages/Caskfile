@@ -1,24 +1,25 @@
-adobe-creative-cloud
-brackets
-calibre
-diffmerge
-dropbox
-firefox
-google-chrome
-google-drive
-google-hangouts
-handbrake
-iterm2
-jdownloader2
-josm
-quicklook-csv
-quicklook-json
-sequel-pro
-simple-comic
-skype
-utorrent
-vagrant
-virtualbox
-vlc
-xld
-xtrafinder
+cask install adobe-creative-cloud
+cask install brackets
+cask install calibre
+cask install diffmerge
+cask install dropbox
+cask install firefox
+cask install google-chrome
+cask install google-drive
+cask install google-hangouts
+cask install handbrake
+cask install iterm2
+cask install jdownloader2
+cask install josm
+cask install sequel-pro
+cask install simple-comic
+cask install skype
+cask install utorrent
+cask install vagrant
+cask install virtualbox
+cask install vlc
+cask install xld
+cask install xtrafinder
+
+# quicklook
+cask install qlmarkdown quicklook-csv quicklook-json && qlmanage -r
