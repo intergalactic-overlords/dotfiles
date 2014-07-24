@@ -1,6 +1,10 @@
 dotfiles
 ========
 
+My dotfiles. Such fun.
+
+If necessary, download osx command line tools manually: https://developer.apple.com/downloads/index.action?name=for%20Xcode%20-
+
 documentation
 =============
 
@@ -33,3 +37,4 @@ There are special characters preceded by "\" that have their own special meaning
 * \\ - a backslash
 * \[ - begin a sequence of non-printing characters, which could be used to embed a terminal control sequence into the prompt
 * \] - end a sequence of non-printing characters
+

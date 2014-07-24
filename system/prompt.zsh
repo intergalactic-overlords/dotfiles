@@ -13,6 +13,10 @@ git_branch() {
   echo $($git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
+untracked () {
+  grep -s "^??" | $git status --porcelain 2>/dev/null | wc -l
+}
+
 git_dirty() {
   if $(! $git status -s &> /dev/null)
   then
@@ -20,9 +24,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%} $(untracked)"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%} $(untracked)"
     fi
   fi
 }
@@ -37,12 +41,14 @@ unpushed () {
   $git cherry -v @{upstream} 2>/dev/null
 }
 
-need_push () {
+
+
+need () {
   if [[ $(unpushed) == "" ]]
   then
     echo " "
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%}"
   fi
 }
 
@@ -71,7 +77,7 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
