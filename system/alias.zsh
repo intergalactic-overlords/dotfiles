@@ -18,5 +18,5 @@ alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup
 alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app"
 
 # vagrant
-alias vafy1="cp -r ~/workspace/vagrant/precise64lamp/Vagrantfile .; cp -r ~/workspace/vagrant/precis$"
-alias vafy2="cp -r ~/workspace/vagrant/squeeze64lamp52/Vagrantfile .; cp -r ~/workspace/vagrant/sque$"
+alias vafy1="cp -R ~/workspace/vagrant/precise64lamp/Vagrantfile .; cp -R ~/workspace/vagrant/precise64lamp/scripts ."
+alias vafy2="cp -R ~/workspace/vagrant/squeeze64lamp52/Vagrantfile .; cp -R ~/workspace/vagrant/squeeze64lamp52/scripts ."

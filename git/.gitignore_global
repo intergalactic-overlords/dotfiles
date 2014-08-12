@@ -4,3 +4,4 @@ settings.php
 settings.custom.php
 */sites/default/files
 .sass-cache
+.brackets.json
