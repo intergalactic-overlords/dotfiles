@@ -1,7 +1,13 @@
 *~
 .DS_Store
+
+# Drupal
 settings.php
 settings.custom.php
 */sites/default/files
+
+# Sass
 .sass-cache
+
+# IDE
 .brackets.json
