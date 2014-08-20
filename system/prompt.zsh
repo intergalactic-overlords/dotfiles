@@ -89,11 +89,32 @@ rb_prompt() {
   fi
 }
 
+node_version() {
+  [ -f $HOME/.nvm/nvm.sh ] || return
+  local nvm_prompt
+  nvm_prompt=$(node -v 2>/dev/null)
+  [[ "${nvm_prompt}x" == "x" ]] && return
+  nvm_prompt=${nvm_prompt:1}
+  echo "node ${nvm_prompt}"
+}
+
+node_prompt() {
+  if ! [[ -z "$(node_version)" ]]
+  then
+    echo "%{$fg_bold[yellow]%}$(node_version)%{$reset_color%} "
+  else
+    echo ""
+  fi
+}
+
 directory_name() {
   echo "%{$fg_bold[cyan]%}%~%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need)\n› '
+# with node or ruby version
+#export PROMPT=$'\n$(rb_prompt)$(node_prompt)in $(directory_name) $(git_dirty)$(need)\n› '
+
+export PROMPT=$'\nin $(directory_name) $(git_dirty)$(need)\n› '
 
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
