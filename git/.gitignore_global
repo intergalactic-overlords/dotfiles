@@ -11,3 +11,12 @@ settings.custom.php
 
 # IDE
 .brackets.json
+.idea
+/*.iml
+/*.ipr
+/*.iws
+*.sublime-project
+*.sublime-workspace
+
+#SVN
+.svn/

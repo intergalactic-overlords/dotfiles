@@ -44,3 +44,38 @@ dockspacer () {
 # join / var local tmp  -> var/local/tmp
 # join , "${FOO[@]}"    -> a,b,c
 join () {local IFS="$1"; shift; echo "$*"; }
+
+# show download history
+dlhistory () {
+  if [ $1 ]; then
+    case $1 in
+
+      show)
+        sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineDataURLString from LSQuarantineEvent'
+      ;;
+
+      delete)
+        sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
+        echo "Pooof, it's all gone…"
+      ;;
+
+      --help)
+        echo "Usage: dlhistory <subcommand>"
+        echo ""
+        echo "Available subcommands:"
+        echo "   show"
+        echo "   delete"
+      ;;
+
+      *)
+        echo "dlhistory: '$1' is not a dlhistory command. See 'dlhistory --help'."
+      ;;
+
+    esac
+  else
+    dlhistory --help
+  fi
+}
+
+
+
