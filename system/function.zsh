@@ -56,7 +56,7 @@ dlhistory () {
 
       delete)
         sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'
-        echo "Pooof, it's all gone…"
+        echo "Pooof, download history is all gone…"
       ;;
 
       --help)
@@ -77,5 +77,36 @@ dlhistory () {
   fi
 }
 
+# MAC address
+# mac current - get current mac address
+# mac generate - random address
+# openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'
+# mac spoof
+# change mac address to random address
+# mac spoof xxxxxx
+# change mac address to custom, with error checking
 
+#mac () {
+#  if [ $1 ]; then
+#    case $1 in
+#
+#      show)
+#    ;;
+#}
 
+# Appify - turns shell script into app
+appify () {
+  APPNAME=${2:-$(basename "$1" ".sh")}
+  DIR="$APPNAME.app/Contents/MacOS"
+
+  if [ -a "$APPNAME.app" ]; then
+    echo "$PWD/$APPNAME.app already exists :("
+    exit 1
+  fi
+
+  mkdir -p "$DIR"
+  cp "$1" "$DIR/$APPNAME"
+  chmod +x "$DIR/$APPNAME"
+
+  echo "$PWD/$APPNAME.app"
+}
