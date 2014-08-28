@@ -86,6 +86,10 @@ dlhistory () {
 # mac spoof xxxxxx
 # change mac address to custom, with error checking
 
+# http://osxdaily.com/2008/01/17/how-to-spoof-your-mac-address-in-mac-os-x/
+# http://osxdaily.com/2012/03/01/change-mac-address-os-x/
+# http://www.zdziarski.com/blog/?p=2738
+
 #mac () {
 #  if [ $1 ]; then
 #    case $1 in
