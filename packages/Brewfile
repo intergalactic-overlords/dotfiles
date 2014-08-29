@@ -1,3 +1,4 @@
+install colordiff
 install curl
 install drush
 install git

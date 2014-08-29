@@ -1,5 +1,4 @@
 cask install adobe-creative-cloud
-cask install alfred
 cask install brackets
 cask install calibre
 cask install diffmerge

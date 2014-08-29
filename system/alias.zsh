@@ -20,3 +20,11 @@ alias ios="open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimul
 # vagrant
 alias vafy1="cp -R ~/workspace/vagrant/precise64lamp/Vagrantfile .; cp -R ~/workspace/vagrant/precise64lamp/scripts ."
 alias vafy2="cp -R ~/workspace/vagrant/squeeze64lamp52/Vagrantfile .; cp -R ~/workspace/vagrant/squeeze64lamp52/scripts ."
+
+# grep
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# diff
+alias diff='colordiff'
