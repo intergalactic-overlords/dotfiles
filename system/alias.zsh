@@ -26,5 +26,8 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
+# MongoDB Alias
+alias mongod="/usr/local/mongodb/2.6.4/bin/mongod --config=/usr/local/mongodb/2.6.4/mongod.conf"
+
 # diff
 alias diff='colordiff'

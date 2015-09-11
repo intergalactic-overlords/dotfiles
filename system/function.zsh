@@ -34,6 +34,7 @@ extract () {
 }
 
 # Add spaces to dock
+# don't forget to: killall -KILL Dock
 dockspacer () {
   defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'
 }
@@ -114,3 +115,6 @@ appify () {
 
   echo "$PWD/$APPNAME.app"
 }
+
+# protractor elementexplorer
+#alias elementexplorer= 

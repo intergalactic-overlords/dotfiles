@@ -1,1 +1,25 @@
-grunt-cli gulp express-generator underscore-cli bower bower-update yo jade jshint nodemon phantomjs http-server
+grunt-cli
+gulp
+express-generator
+underscore-cli
+bower
+bower-update
+jade
+jshint
+nodemon
+phantomjs
+http-server
+jshint
+eslint
+typescript
+lodash
+mocha
+chai
+less
+angular
+yo
+caniuse-cmd
+gulp-mocha
+harp
+learnyounode
+webdriver

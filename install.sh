@@ -17,20 +17,13 @@ ln -sfhv "$DOTFILES_DIR/git/.gitignore_global" ~
 log_message "Brewing ALL THE THINGS.."
 if [[ ! $(which brew) ]]; then
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-    # Link Homebrew casks in `/Applications` rather than `~/Applications`
-    echo 'export HOMEBREW_CASK_OPTS="--appdir=/Applications"' >> ~/.bash_profile
 else
     brew update
     brew upgrade
 fi
 
-brew tap caskroom/cask
-brew install brew-cask
-brew tap caskroom/versions
-
-# Install brew & brew-cask packages
+# Install brew packages
 brew bundle "$DOTFILES_DIR/packages/Brewfile"
-brew bundle "$DOTFILES_DIR/packages/Caskfile"
 
 # nvm
 if [[ ! -f ~/.nvm/nvm.sh ]];then

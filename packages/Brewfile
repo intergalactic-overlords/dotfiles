@@ -5,6 +5,7 @@ install git
 install git-completion
 install grep
 install make
+install node
 install postgresql
 install sqlite
 install tig
